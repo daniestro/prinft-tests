@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fopen.c                                            :+:      :+:    :+:   */
+/*   test_string_without_parameters.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 23:38:15 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/22 00:00:44 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/22 16:59:47 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/22 17:58:19 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "io_utils.h"
 
-char	*fopen_string(void)
+int	test_hello_world(void)
 {
-	FILE	*file;
 	char	*string;
-	long	file_size;
+	int		result;
 
-	file = fopen(FILE_NAME, READ_BYTES);
-	fseek(file, 0, SEEK_END);
-	file_size = ftell(file);
-	fseek(file, 0, SEEK_SET);
-	string = malloc(file_size + 1);
-	fread(string, file_size, 1, file);
-	fclose(file);
-	string[file_size] = 0;
-	return (string);
+	reset_output();
+	printf("Hello World!\n");
+	fflush(stdout);
+	string = file_to_string();
+	if (!string)
+		return (0);
+	result = (strcmp(string, "Hello World!\n") == 0);
+	free(string);
+	return (result);
 }
