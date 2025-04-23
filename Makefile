@@ -2,8 +2,9 @@ NAME = tests.out
 
 LIBFTPRINTF :=  $(PROJECT_DIR)/libftprintf.a
 
-SOURCES = $(wildcard *.c)
-OBJECTS = $(SOURCES:.c=.o)
+RAW_SOURCES := $(shell find . -name "*.c")
+SOURCES := $(patsubst ./%,%,$(RAW_SOURCES))
+OBJECTS := $(SOURCES:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra -Iutils -Ibasic
 
