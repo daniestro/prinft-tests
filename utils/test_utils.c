@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:59:42 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 17:35:34 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:51:51 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	ft_testadd_back(t_test **test, t_test *new)
 	current->next = new;
 }
 
-t_test	*ft_testnew(void)
+t_test	*ft_testnew(char *exp_res)
 {
 	t_test	*test;
 
 	test = malloc(sizeof(t_test));
 	if (test == NULL)
 		return (NULL);
-	test->exp_res = NULL;
+	test->exp_res = exp_res;
 	test->res = NULL;
 	test->next = NULL;
 	test->pass = 0;

@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 17:25:24 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:51:16 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ void	with_null(t_test **results)
 {
 	t_test	*test;
 
-	test = ft_testnew();
-	test->exp_res = "Hello World!\n";
+	test = ft_testnew("Hello World!\n");
 	reset_output();
-	printf("Hello World!\n");
+	printf("Hello World!\n", NULL);
 	fflush(stdout);
 	test->res = file_to_string();
 	if (!test->res)
