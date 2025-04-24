@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:59:42 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 18:44:24 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 18:50:58 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_testadd_back(t_test **test, t_test *new)
 	current->next = new;
 }
 
-t_test	*ft_testnew(char *exp_res, const char *func_name)
+t_test	*testnew(char *exp_res, const char *func_name)
 {
 	t_test	*test;
 
