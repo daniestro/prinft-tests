@@ -6,7 +6,7 @@ RAW_SOURCES := $(shell find . -name "*.c")
 SOURCES := $(patsubst ./%,%,$(RAW_SOURCES))
 OBJECTS := $(SOURCES:.c=.o)
 
-FLAGS = -Wall -Werror -Wextra -Iutils -Ibasic
+FLAGS = -Wall -Wextra -Iutils -Ibasic
 
 all: $(NAME)
 
