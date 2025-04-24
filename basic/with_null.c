@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic_tests.h                                      :+:      :+:    :+:   */
+/*   with_null.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 23:21:47 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 17:04:19 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/24 17:25:24 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASIC_TESTS_H
-# define BASIC_TESTS_H
+#include "basic_tests.h"
+#include "io_utils.h"
+#include "test_utils.h"
 
-# include "test_struct.h"
+void	with_null(t_test **results)
+{
+	t_test	*test;
 
-void	only_string(t_test **results);
-void	with_null(t_test **results);
-
-#endif
+	test = ft_testnew();
+	test->exp_res = "Hello World!\n";
+	reset_output();
+	printf("Hello World!\n");
+	fflush(stdout);
+	test->res = file_to_string();
+	if (!test->res)
+		test->pass = 0;
+	else
+		test->pass = (strcmp(test->exp_res, test->res) == 0);
+	ft_testadd_back(results, test);
+}
