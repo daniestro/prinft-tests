@@ -35,6 +35,10 @@ t_test	*ft_testnew(void)
 	test = malloc(sizeof(t_test));
 	if (test == NULL)
 		return (NULL);
+	test->exp_res = NULL;
+	test->res = NULL;
+	test->next = NULL;
+	test->pass = 0;
 	return (test);
 }
 
