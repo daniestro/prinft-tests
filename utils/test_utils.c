@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:59:42 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 18:50:58 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:01:55 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,10 @@ int	cmpres(t_test *test)
 {
 	if (test->res == NULL)
 		return (0);
+	if (test->exp_res == NULL)
+	{
+		printf("%s\n", test->res);
+		return (0);
+	}
 	return (strcmp(test->exp_res, test->res) == 0);
 }
