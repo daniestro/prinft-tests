@@ -17,6 +17,8 @@ void	ft_testadd_back(t_test **test, t_test *new)
 {
 	t_test	*current;
 
+	if (test == NULL)
+		return ;
 	if (*test == NULL)
 	{
 		*test = new;
@@ -47,6 +49,8 @@ void	ft_free(t_test **result)
 	t_test	*current;
 	t_test	*next;
 
+	if (result == NULL)
+		return ;
 	current = *result;
 	while (current)
 	{
