@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:12:57 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 18:43:02 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:29:13 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 typedef struct s_test
 {
 	const char		*name;
-	char			*exp_res;
-	char			*res;
+	char			*exp_output;
+	int				exp_res;
+	char			*output;
+	int				res;
 	int				pass;
 	struct s_test	*next;
 }	t_test;

@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 18:50:12 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:28:56 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	with_null(t_test **results)
 	reset_output();
 	printf("Hello World!\n", NULL);
 	fflush(stdout);
-	test->res = file_to_string();
+	test->output = file_to_string();
 	test->pass = cmpres(test);
 	ft_testadd_back(results, test);
 }

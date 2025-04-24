@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:59:42 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 19:01:55 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:28:56 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ t_test	*testnew(char *exp_res, const char *func_name)
 	if (test == NULL)
 		return (NULL);
 	test->name = func_name;
-	test->exp_res = exp_res;
-	test->res = NULL;
+	test->exp_output = exp_res;
+	test->output = NULL;
 	test->next = NULL;
 	test->pass = 0;
 	return (test);
@@ -56,7 +56,7 @@ void	ft_free(t_test **result)
 	while (current)
 	{
 		next = current->next;
-		free(current->res);
+		free(current->output);
 		free(current);
 		current = next;
 	}
@@ -74,8 +74,8 @@ void	print_results(t_test *result)
 		printf(" Test %i - %s:\t%s\n", i, result->name, result->pass ? "✅ Passed" : "❌ Failed");
 		if (result->pass == 0)
 		{
-			printf("Expected: %s\n", result->exp_res);
-			printf("Recieved: %s\n", result->res);
+			printf("Expected: %s\n", result->exp_output);
+			printf("Recieved: %s\n", result->output);
 		}
 		result = result->next;
 		i++;
@@ -84,12 +84,12 @@ void	print_results(t_test *result)
 
 int	cmpres(t_test *test)
 {
-	if (test->res == NULL)
+	if (test->output == NULL)
 		return (0);
-	if (test->exp_res == NULL)
+	if (test->exp_output == NULL)
 	{
-		printf("%s\n", test->res);
+		printf("%s\n", test->output);
 		return (0);
 	}
-	return (strcmp(test->exp_res, test->res) == 0);
+	return (strcmp(test->exp_output, test->output) == 0);
 }
