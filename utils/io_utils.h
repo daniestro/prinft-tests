@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 23:21:47 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/22 16:59:05 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:25:44 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "test_struct.h"
 
 # define WRITE "w"
 # define FREOPEN_ERROR "freopen"
@@ -28,5 +29,6 @@
 
 FILE	*stdout_to_file(void);
 char	*file_to_string(void);
+int		redirect_to_file(t_test **results, void (*func)(t_test **));
 
 #endif

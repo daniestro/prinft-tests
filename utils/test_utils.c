@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:59:42 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 16:16:12 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:35:34 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,23 @@ void	ft_free(t_test **result)
 		current = next;
 	}
 	free(result);
+}
+
+void	print_results(t_test *result)
+{
+	int	i;
+
+	printf("=== Test Results ===\n");
+	i = 1;
+	while (result)
+	{
+		printf(" Test %i: %s\n", i, (result)->pass ? "✅ Passed" : "❌ Failed");
+		if (result->pass == 0)
+		{
+			printf("Expected: %s\n", result->exp_res);
+			printf("Recieved: %s\n", result->res);
+		}
+		result = result->next;
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 23:38:15 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/22 17:58:39 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:24:45 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,20 @@ char	*file_to_string(void)
 	fclose(file);
 	string[file_size] = 0;
 	return (string);
+}
+
+int	redirect_to_file(t_test **results, void (*func)(t_test **))
+{
+	int		org_stdout_fd;
+
+	org_stdout_fd = duplicate_stdout_descriptor();
+	if (stdout_to_file() == NULL)
+	{
+		redirect_stdout_to(org_stdout_fd);
+		return (1);
+	}
+	func(results);
+	redirect_stdout_to(org_stdout_fd);
+	close(org_stdout_fd);
+	return (0);
 }

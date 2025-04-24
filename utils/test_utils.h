@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:36:33 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 16:13:44 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:23:38 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include "test_struct.h"
 
 t_test	*ft_testnew(void);
-void	ft_testadd_back(t_test **lst, t_test *new);
+void	ft_testadd_back(t_test **test, t_test *new);
 void	ft_free(t_test **result);
+void	print_results(t_test *result);
 
 #endif
