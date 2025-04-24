@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic_tests.h                                      :+:      :+:    :+:   */
+/*   eof.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 23:21:47 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 19:56:19 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/24 19:54:08 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/24 19:56:14 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASIC_TESTS_H
-# define BASIC_TESTS_H
+#include "basic_tests.h"
+#include "io_utils.h"
+#include "test_utils.h"
 
-# include "test_struct.h"
+void	eof(t_test **results)
+{
+	t_test	*test;
 
-void	only_string(t_test **results);
-void	with_null(t_test **results);
-void	string_with_string(t_test **results);
-void	string_with_string_none(t_test **results);
-void	just_null(t_test **results);
-void	empty(t_test **results);
-void	eof(t_test **results);
-
-#endif
+	test = ft_testnew("Hello", 5);
+	reset_output();
+	test->res = printf("Hello\0World!\n");
+	fflush(stdout);
+	test->output = file_to_string();
+	test->pass = cmpres(test);
+	ft_testadd_back(results, test);
+}

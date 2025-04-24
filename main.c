@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 00:01:31 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 19:51:43 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:55:48 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	start_tests(t_test **results)
 	string_with_string_none(results);
 	just_null(results);
 	empty(results);
+	eof(results);
 }
 
 int	main(void)
