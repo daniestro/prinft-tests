@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:59:47 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 19:29:36 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:31:23 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	only_string(t_test **results)
 
 	test = ft_testnew("Hello World!\n");
 	reset_output();
-	printf("Hello World!\n");
+	test->res = printf("Hello World!\n");
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);

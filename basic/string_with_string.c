@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:53:21 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 19:28:56 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:30:48 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	string_with_string(t_test **results)
 
 	test = ft_testnew("Hello World!\n");
 	reset_output();
-	printf("Hello %s!\n", "World");
+	test->res = printf("Hello %s!\n", "World");
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);
