@@ -43,6 +43,11 @@ void	print_results(t_test *result)
 	while (result)
 	{
 		printf("Test %i: %s\n", i, (result)->pass ? "✅ Passed" : "❌ Failed");
+		if (result->pass == 0)
+		{
+			printf("Expected: %s\n", result->exp_res);
+			printf("Recieved: %s\n", result->res);
+		}
 		result = result->next;
 		i++;
 	}
