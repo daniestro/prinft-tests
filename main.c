@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 00:01:31 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 14:07:45 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 14:13:56 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,42 @@ void	start_tests(t_test **results)
 	only_string(results);
 }
 
-// void	redirect_to_file(void (*func)(void))
-
-int	main(void)
+int	redirect_to_file(t_test **results, void (*func)(t_test **))
 {
 	int		org_stdout_fd;
-	int		i;
-	t_test	**results;
 
-	results = malloc(sizeof(t_test));
 	org_stdout_fd = duplicate_stdout_descriptor();
 	if (stdout_to_file() == NULL)
 	{
 		redirect_stdout_to(org_stdout_fd);
 		return (1);
 	}
-	start_tests(results);
+	func(results);
 	redirect_stdout_to(org_stdout_fd);
 	close(org_stdout_fd);
+	return (0);
+}
+
+void	print_results(t_test *result)
+{
+	int	i;
+
 	printf("=== Test Results ===\n");
 	i = 1;
-	while (*results)
+	while (result)
 	{
-		printf("Test %i: %s\n", i, (*results)->pass ? "✅ Passed" : "❌ Failed");
-		*results = (*results)->next;
+		printf("Test %i: %s\n", i, (result)->pass ? "✅ Passed" : "❌ Failed");
+		result = result->next;
 		i++;
 	}
+}
+
+int	main(void)
+{
+	t_test	**results;
+
+	results = malloc(sizeof(t_test));
+	redirect_to_file(results, start_tests);
+	print_results(*results);
 	return (0);
 }
