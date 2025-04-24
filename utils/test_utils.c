@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:59:42 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 13:51:45 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:16:12 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,20 @@ t_test	*ft_testnew(void)
 	if (test == NULL)
 		return (NULL);
 	return (test);
+}
+
+void	ft_free(t_test **result)
+{
+	t_test	*current;
+	t_test	*next;
+
+	current = *result;
+	while (current)
+	{
+		next = current->next;
+		free(current->res);
+		free(current);
+		current = next;
+	}
+	free(result);
 }
