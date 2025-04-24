@@ -18,3 +18,9 @@ $(NAME): $(OBJECTS) $(LIBFTPRINTF)
 
 $(LIBFTPRINTF):
 	$(MAKE) -C $(PROJECT_DIR)
+
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
