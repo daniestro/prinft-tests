@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 00:01:31 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 20:07:46 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:39:20 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	start_tests(t_test **results)
 	empty(results);
 	eof(results);
 	string_with_null(results);
+	percents(results);
+	not_exist_command(results);
 }
 
 int	main(void)

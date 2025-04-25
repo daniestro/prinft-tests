@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eof.c                                              :+:      :+:    :+:   */
+/*   percents.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 19:54:08 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/25 15:47:09 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/25 17:51:17 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include "io_utils.h"
 #include "test_utils.h"
 
-void	eof(t_test **results)
+void	percents(t_test **results)
 {
 	t_test	*test;
 
-	test = ft_testnew("Hello", 5);
+	test = ft_testnew("%%\n", 3);
 	reset_output();
-	test->res = ft_printf("Hello\0World!\n");
+	test->res = ft_printf("%%%\n");
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);

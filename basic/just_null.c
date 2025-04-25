@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:58:18 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 19:47:32 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/25 15:47:11 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	just_null(t_test **results)
 
 	test = ft_testnew("", -1);
 	reset_output();
-	test->res = printf(NULL);
+	test->res = ft_printf(NULL);
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);

@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:53:21 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 20:10:02 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/25 15:47:21 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	string_with_null(t_test **results)
 
 	test = ft_testnew("Hello (null)!\n", 14);
 	reset_output();
-	test->res = printf("Hello %s!\n", NULL);
+	test->res = ft_printf("Hello %s!\n", NULL);
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);
