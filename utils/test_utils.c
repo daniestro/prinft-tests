@@ -13,6 +13,8 @@
 #include "test_struct.h"
 #include "io_utils.h"
 
+// The function adds to the given t_test structure an element to the next.
+// If it is not initialized sets to the new instance.
 void	ft_testadd_back(t_test **test, t_test *new)
 {
 	t_test	*current;
