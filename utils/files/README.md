@@ -1,5 +1,7 @@
 # The Functions to work with stdout and file descriptors
 
+![image](https://github.com/user-attachments/assets/cb9e70af-a6ff-465c-ae3c-c10b31a29343)
+
 </br>
 
 ## file_to_string.c
