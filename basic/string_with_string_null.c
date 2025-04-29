@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "io_utils.h"
+#include "utils.h"
 #include "test_utils.h"
 
-void	string_with_string_none(t_test **results)
+void string_with_string_none(t_test **results)
 {
-	t_test	*test;
+	t_test *test;
 
 	test = ft_testnew("Hello World!\n", 13);
 	reset_output();

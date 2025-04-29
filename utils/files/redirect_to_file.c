@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   with_null.c                                        :+:      :+:    :+:   */
+/*   redirect_to_file.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/25 15:47:35 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/29 10:58:42 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/29 10:58:42 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "basic_tests.h"
 #include "utils.h"
-#include "test_utils.h"
 
-void with_null(t_test **results)
+int redirect_to_file(t_test **results, void (*func)(t_test **))
 {
-	t_test *test;
+    int org_stdout_fd;
 
-	test = ft_testnew("Hello World!\n", 13);
-	reset_output();
-	test->res = ft_printf("Hello World!\n", NULL);
-	fflush(stdout);
-	test->output = file_to_string();
-	test->pass = cmpres(test);
-	ft_testadd_back(results, test);
+    org_stdout_fd = duplicate_stdout_descriptor();
+    if (stdout_to_file() == NULL)
+    {
+        redirect_stdout_to(org_stdout_fd);
+        return (1);
+    }
+    func(results);
+    redirect_stdout_to(org_stdout_fd);
+    close(org_stdout_fd);
+    return (0);
 }

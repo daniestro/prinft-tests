@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "io_utils.h"
+#include "utils.h"
 #include "test_utils.h"
 
-void	percents(t_test **results)
+void percents(t_test **results)
 {
-	t_test	*test;
+	t_test *test;
 
 	test = ft_testnew("%%\n", 3);
 	reset_output();

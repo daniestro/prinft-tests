@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "io_utils.h"
+#include "utils.h"
 #include "test_utils.h"
 
-void	string_with_null(t_test **results)
+void string_with_null(t_test **results)
 {
-	t_test	*test;
+	t_test *test;
 
 	test = ft_testnew("Hello (null)!\n", 14);
 	reset_output();

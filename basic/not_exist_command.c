@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "io_utils.h"
+#include "utils.h"
 #include "test_utils.h"
 
-void	not_exist_command(t_test **results)
+void not_exist_command(t_test **results)
 {
-	t_test	*test;
+	t_test *test;
 
 	test = ft_testnew("%k\n", 3);
 	reset_output();
