@@ -1,4 +1,4 @@
-# Functions to work with stdout and file descriptors
+# The Functions to work with stdout and file descriptors
 
 </br>
 
