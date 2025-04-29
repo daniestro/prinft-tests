@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io_utils.h"
+#include "utils.h"
 #include "basic_tests.h"
 #include "test_utils.h"
 
-void	start_tests(t_test **results)
+void start_tests(t_test **results)
 {
 	// Basic
 	only_string(results);
@@ -29,9 +29,9 @@ void	start_tests(t_test **results)
 	not_exist_command(results);
 }
 
-int	main(void)
+int main(void)
 {
-	t_test	**results;
+	t_test **results;
 
 	results = malloc(sizeof(t_test));
 	redirect_to_file(results, start_tests);
