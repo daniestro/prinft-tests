@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 18:05:15 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 18:47:56 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:05:39 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,8 @@ void	test_double_with_null(t_test **results);
 void	test_double_null(t_test **results);
 void	test_min_width_less(t_test **results);
 void	test_min_width_more(t_test **results);
+void	test_min_width_more_aligned(t_test **results);
+void	test_min_width_more_extra_aligned(t_test **results);
+void	test_aligned(t_test **results);
 
 #endif

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   run_frm_tests.c                                    :+:      :+:    :+:   */
+/*   test_min_width_more_extra_aligned.c                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:08:08 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 19:06:05 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/29 18:38:11 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/29 19:02:59 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str_frm_tests.h"
 
-void	run_frm_tests(t_test **results)
+void	test_min_width_more_extra_aligned(t_test **results)
 {
-	test_double(results);
-	test_double_with_null(results);
-	test_double_null(results);
-	test_min_width_less(results);
-	test_min_width_more(results);
-	test_aligned(results);
-	test_min_width_more_aligned(results);
-	test_min_width_more_extra_aligned(results);
-	test_aligned(results);
+	t_test	*test;
+
+	test = ft_testnew("HelloWorld     !\n", 17);
+	reset_output();
+	test->res = ft_printf("Hello%-----10s!\n", "World");
+	fflush(stdout);
+	test->output = file_to_string();
+	test->pass = cmpres(test);
+	ft_testadd_back(results, test);
 }
