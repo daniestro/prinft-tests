@@ -12,6 +12,16 @@
 
 #include "utils.h"
 
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*   Opens a session for a given function, redirecting the standard output    */
+/*   to a file during its execution. After the function completes, restores   */
+/*   the original output back to the terminal.                                */
+/*                                                                            */
+/*   Returns 0 on success, or 1 if an error occurs.                           */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 int redirect_to_file(t_test **results, void (*func)(t_test **))
 {
     int org_stdout_fd;
