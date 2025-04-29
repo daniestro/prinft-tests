@@ -6,16 +6,16 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:27:33 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 11:27:33 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:59:15 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int cmpres(t_test *test)
+int	cmpres(t_test *test)
 {
-	int output_equals;
-	int res_equals;
+	int	output_equals;
+	int	res_equals;
 
 	if (test->output == NULL)
 		return (0);

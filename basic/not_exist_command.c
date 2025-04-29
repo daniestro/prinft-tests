@@ -6,15 +6,15 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/25 17:50:03 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:17:00 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "basic_tests.h"
 
-void not_exist_command(t_test **results)
+void	not_exist_command(t_test **results)
 {
-	t_test *test;
+	t_test	*test;
 
 	test = ft_testnew("%k\n", 3);
 	reset_output();

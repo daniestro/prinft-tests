@@ -6,15 +6,15 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/25 15:47:35 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:17:18 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "basic_tests.h"
 
-void with_null(t_test **results)
+void	with_null(t_test **results)
 {
-	t_test *test;
+	t_test	*test;
 
 	test = ft_testnew("Hello World!\n", 13);
 	reset_output();

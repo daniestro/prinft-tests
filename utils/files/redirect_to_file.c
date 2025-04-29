@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:58:42 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 10:58:42 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:12:35 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-int redirect_to_file(t_test **results, void (*func)(t_test **))
+int	redirect_to_file(t_test **results, void (*func)(t_test **))
 {
-    int org_stdout_fd;
+	int	org_stdout_fd;
 
-    org_stdout_fd = duplicate_stdout_descriptor();
-    if (stdout_to_file() == NULL)
-    {
-        redirect_stdout_to(org_stdout_fd);
-        return (1);
-    }
-    func(results);
-    redirect_stdout_to(org_stdout_fd);
-    close(org_stdout_fd);
-    return (0);
+	org_stdout_fd = duplicate_stdout_descriptor();
+	if (stdout_to_file() == NULL)
+	{
+		redirect_stdout_to(org_stdout_fd);
+		return (1);
+	}
+	func(results);
+	redirect_stdout_to(org_stdout_fd);
+	close(org_stdout_fd);
+	return (0);
 }

@@ -6,15 +6,15 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:26:33 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 11:26:33 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:58:49 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void print_results(t_test *result)
+void	print_results(t_test *result)
 {
-	int i;
+	int	i;
 
 	printf("========== Test Results ==========\n");
 	i = 1;
