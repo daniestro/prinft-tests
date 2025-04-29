@@ -11,21 +11,21 @@
 /* ************************************************************************** */
 
 #ifndef BASIC_TESTS_H
-# define BASIC_TESTS_H
+#define BASIC_TESTS_H
 
-# include "test_struct.h"
+#include "utils.h"
 
-int	ft_printf(const char *str, ...);
+int ft_printf(const char *str, ...);
 
-void	only_string(t_test **results);
-void	with_null(t_test **results);
-void	string_with_string(t_test **results);
-void	string_with_string_none(t_test **results);
-void	just_null(t_test **results);
-void	empty(t_test **results);
-void	eof(t_test **results);
-void	string_with_null(t_test **results);
-void	percents(t_test **results);
-void	not_exist_command(t_test **results);
+void only_string(t_test **results);
+void with_null(t_test **results);
+void string_with_string(t_test **results);
+void string_with_string_none(t_test **results);
+void just_null(t_test **results);
+void empty(t_test **results);
+void eof(t_test **results);
+void string_with_null(t_test **results);
+void percents(t_test **results);
+void not_exist_command(t_test **results);
 
 #endif

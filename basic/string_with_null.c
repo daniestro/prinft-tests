@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "utils.h"
-#include "test_utils.h"
 
 void string_with_null(t_test **results)
 {

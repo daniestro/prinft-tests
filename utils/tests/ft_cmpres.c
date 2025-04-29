@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   empty.c                                            :+:      :+:    :+:   */
+/*   ft_cmpres.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 19:50:57 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/25 15:47:05 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/29 11:27:33 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/29 11:27:33 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "basic_tests.h"
+#include "utils.h"
 
-void empty(t_test **results)
+int cmpres(t_test *test)
 {
-	t_test *test;
+	int output_equals;
+	int res_equals;
 
-	test = ft_testnew("", 0);
-	reset_output();
-	test->res = ft_printf("");
-	fflush(stdout);
-	test->output = file_to_string();
-	test->pass = cmpres(test);
-	ft_testadd_back(results, test);
+	if (test->output == NULL)
+		return (0);
+	if (test->exp_output == NULL)
+		printf("Recieved exp_output as null\n");
+	output_equals = (strcmp(test->exp_output, test->output) == 0);
+	res_equals = (test->exp_res == test->res);
+	return (output_equals && res_equals);
 }

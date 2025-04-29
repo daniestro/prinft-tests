@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "utils.h"
-#include "test_utils.h"
 
 void percents(t_test **results)
 {

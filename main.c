@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
 #include "basic_tests.h"
-#include "test_utils.h"
 
 void start_tests(t_test **results)
 {
