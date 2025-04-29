@@ -6,11 +6,20 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:27:33 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 12:59:15 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:13:49 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+
+/*--------------------------------------------------------------------------*/
+/*                                                                          */
+/*   Checks whether the expected result equals the actual result.           */
+/*                                                                          */
+/*   Expects that the input is not NULL, then compares string and integer   */
+/*   results.  Returns 0 on success,  or 1 if they are not equal.           */
+/*                                                                          */
+/*--------------------------------------------------------------------------*/
 
 int	cmpres(t_test *test)
 {
