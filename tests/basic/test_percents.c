@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   percents.c                                         :+:      :+:    :+:   */
+/*   test_percents.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 13:17:06 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:38:31 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "basic_tests.h"
 
-void	percents(t_test **results)
+void	test_percents(t_test **results)
 {
 	t_test	*test;
 

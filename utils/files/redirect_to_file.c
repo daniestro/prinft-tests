@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:58:42 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 13:12:35 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:54:00 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-int	redirect_to_file(t_test **results, void (*func)(t_test **))
+int	redirect_to_file(t_test **results, char *zone, void (*func)(t_test **, char *))
 {
 	int	org_stdout_fd;
 
@@ -32,7 +32,7 @@ int	redirect_to_file(t_test **results, void (*func)(t_test **))
 		redirect_stdout_to(org_stdout_fd);
 		return (1);
 	}
-	func(results);
+	func(results, zone);
 	redirect_stdout_to(org_stdout_fd);
 	close(org_stdout_fd);
 	return (0);

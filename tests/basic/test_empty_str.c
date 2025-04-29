@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string_with_string_null.c                          :+:      :+:    :+:   */
+/*   test_empty_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 18:53:21 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 13:17:11 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/24 19:50:57 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/29 17:37:18 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "basic_tests.h"
 
-void	string_with_string_none(t_test **results)
+void	test_empty_str(t_test **results)
 {
 	t_test	*test;
 
-	test = ft_testnew("Hello World!\n", 13);
+	test = ft_testnew("", 0);
 	reset_output();
-	test->res = ft_printf("Hello %s!\n", "World", NULL);
+	test->res = ft_printf("");
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);

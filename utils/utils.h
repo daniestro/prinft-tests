@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 23:21:47 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 13:18:06 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:54:07 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@
 # define duplicate_stdout_descriptor() dup(STDOUT_FILENO)
 # define redirect_stdout_to(fd) dup2(fd, STDOUT_FILENO)
 
-FILE	*stdout_to_file(void);
-char	*file_to_string(void);
-int		redirect_to_file(t_test **results, void (*func)(t_test **));
-
 typedef struct	s_test
 {
 	const char	*name;
@@ -40,6 +36,10 @@ typedef struct	s_test
 	int			pass;
 	struct s_test *next;
 }	t_test;
+
+FILE	*stdout_to_file(void);
+char	*file_to_string(void);
+int		redirect_to_file(t_test **results, char *zone, void (*func)(t_test **, char *));
 
 t_test	*testnew(char *exp_output, int exp_res, const char *file_name);
 # define	ft_testnew(exp_output, exp_res) testnew(exp_output, exp_res, __func__)

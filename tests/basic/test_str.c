@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   not_exist_command.c                                :+:      :+:    :+:   */
+/*   test_str.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 17:03:39 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 13:17:00 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/22 16:59:47 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/29 17:50:34 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "basic_tests.h"
 
-void	not_exist_command(t_test **results)
+void	test_str(t_test **results)
 {
 	t_test	*test;
 
-	test = ft_testnew("%k\n", 3);
+	test = ft_testnew("Hello World!\n", 13);
 	reset_output();
-	test->res = ft_printf("%k\n");
+	test->res = ft_printf("Hello World!\n");
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);
