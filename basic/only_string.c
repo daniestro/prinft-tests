@@ -6,13 +6,11 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:59:47 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/25 15:47:18 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:17:03 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "io_utils.h"
-#include "test_utils.h"
 
 void	only_string(t_test **results)
 {

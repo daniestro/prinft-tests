@@ -6,13 +6,11 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:53:21 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/25 15:47:25 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:17:11 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "io_utils.h"
-#include "test_utils.h"
 
 void	string_with_string_none(t_test **results)
 {

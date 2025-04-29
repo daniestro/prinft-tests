@@ -1,38 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   io_utils.c                                         :+:      :+:    :+:   */
+/*   file_to_string.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 23:38:15 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/24 16:24:45 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/04/29 10:57:37 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/04/29 13:13:22 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io_utils.h"
-
-/*----------------------------------------------------------------------------*/
-/*                                                                            */
-/*   Redirets stdout to a file and returns the corresponding file pointer.    */
-/*                                                                            */
-/*   It opens  the file in write mode using stdout as the target stream. If   */
-/*   redirection fails, it prints an error and returns NULL.                  */
-/*                                                                            */
-/*----------------------------------------------------------------------------*/
-
-FILE	*stdout_to_file(void)
-{
-	FILE	*file_pointer;
-
-	file_pointer = freopen(FILE_NAME, WRITE, stdout);
-	if (file_pointer == NULL)
-	{
-		perror(FREOPEN_ERROR);
-		return (NULL);
-	}
-	return (file_pointer);
-}
+#include "utils.h"
 
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
@@ -59,20 +37,4 @@ char	*file_to_string(void)
 	fclose(file);
 	string[file_size] = 0;
 	return (string);
-}
-
-int	redirect_to_file(t_test **results, void (*func)(t_test **))
-{
-	int		org_stdout_fd;
-
-	org_stdout_fd = duplicate_stdout_descriptor();
-	if (stdout_to_file() == NULL)
-	{
-		redirect_stdout_to(org_stdout_fd);
-		return (1);
-	}
-	func(results);
-	redirect_stdout_to(org_stdout_fd);
-	close(org_stdout_fd);
-	return (0);
 }

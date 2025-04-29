@@ -6,13 +6,11 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 19:54:08 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/25 15:47:09 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:16:55 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "basic_tests.h"
-#include "io_utils.h"
-#include "test_utils.h"
 
 void	eof(t_test **results)
 {
