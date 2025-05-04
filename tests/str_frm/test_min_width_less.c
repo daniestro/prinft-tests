@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 18:38:11 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 18:41:25 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/05/03 17:23:42 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	test_min_width_less(t_test **results)
 
 	test = ft_testnew("Hello World!\n", 13);
 	reset_output();
-	test->res = ft_printf("Hello%1s!\n", "World");
+	test->res = ft_printf("Hello %1s!\n", "World");
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);

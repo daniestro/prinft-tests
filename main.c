@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 00:01:31 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 18:55:04 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/05/04 15:00:53 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	start_tests(t_test **results, char *zone)
 		run_basic_tests(results);
 	if (!strcmp(zone, "strfrm"))
 		run_frm_tests(results);
+	if (!strcmp(zone, "strprc"))
+		run_prc_tests(results);
+	if (!strcmp(zone, "strinvfrm"))
+		run_inv_frm_tests(results);
 }
 
 int	main(int argc, char **argv)

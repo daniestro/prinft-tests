@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_double.c                                      :+:      :+:    :+:   */
+/*   test_max_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:12:05 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/03 16:35:20 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/04 14:29:47 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/04 14:41:06 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str_frm_tests.h"
 
-void	test_double(t_test **results)
+void	test_int_overflow(t_test **results)
 {
 	t_test	*test;
 
-	test = ft_testnew("Hello! World! Mundo!\n", 21);
+	test = ft_testnew("Hello!\n", 7);
 	reset_output();
-	test->res = ft_printf("Hello!%s%s\n", " World!", " Mundo!");
+	test->res = ft_printf("%2147483648s\n", "Hello!");
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_double.c                                      :+:      :+:    :+:   */
+/*   str_inv_frm_tests.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:12:05 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/03 16:35:20 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/04 14:45:47 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/04 16:14:53 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_frm_tests.h"
+#ifndef STR_INV_FRM_TESTS_H
+# define STR_INV_FRM_TESTS_H
 
-void	test_double(t_test **results)
-{
-	t_test	*test;
+# include "utils.h"
 
-	test = ft_testnew("Hello! World! Mundo!\n", 21);
-	reset_output();
-	test->res = ft_printf("Hello!%s%s\n", " World!", " Mundo!");
-	fflush(stdout);
-	test->output = file_to_string();
-	test->pass = cmpres(test);
-	ft_testadd_back(results, test);
-}
+void	test_numbers(t_test **results);
+void	test_prc(t_test **results);
+void	test_inv_flags(t_test **results);
+
+#endif

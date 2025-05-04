@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 23:21:47 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/04/29 17:54:07 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:03:34 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ typedef struct	s_test
 	int			pass;
 	struct s_test *next;
 }	t_test;
+
+int		ft_printf(const char *str, ...);
 
 FILE	*stdout_to_file(void);
 char	*file_to_string(void);

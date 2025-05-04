@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_double.c                                      :+:      :+:    :+:   */
+/*   test_prc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:12:05 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/03 16:35:20 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/04 15:53:48 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/04 15:57:26 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_frm_tests.h"
+#include "str_inv_frm_tests.h"
 
-void	test_double(t_test **results)
+void	test_prc(t_test **results)
 {
 	t_test	*test;
 
-	test = ft_testnew("Hello! World! Mundo!\n", 21);
+	test = ft_testnew("%+-.0.s\n", 8);
 	reset_output();
-	test->res = ft_printf("Hello!%s%s\n", " World!", " Mundo!");
+	test->res = ft_printf("%+ -..s\n", "World!", "Mundo!");
 	fflush(stdout);
 	test->output = file_to_string();
 	test->pass = cmpres(test);

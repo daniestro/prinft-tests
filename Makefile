@@ -20,6 +20,9 @@ $(NAME): $(OBJECTS) $(LIBFTPRINTF) $(LIBFT)
 $(LIBFTPRINTF):
 	$(MAKE) -C $(PROJECT_DIR)
 
+$(LIBFT):
+	$(MAKE) -C $(PROJECT_DIR)/libft
+
 clean:
 	rm -f $(OBJECTS)
 
