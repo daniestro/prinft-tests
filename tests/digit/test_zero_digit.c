@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   test_zero_digit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:10:07 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 19:30:26 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/05 19:39:04 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/05 19:39:50 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "digit_tests.h"
 
-# include "utils.h"
+void	test_zero_digit(t_test **results)
+{
+	t_test	*test;
 
-void	run_basic_tests(t_test **results);
-void	run_frm_tests(t_test **results);
-void	run_prc_tests(t_test **results);
-void	run_inv_frm_tests(t_test **results);
-void	run_chr_tests(t_test **results);
-void	run_ptr_tests(t_test **results);
-void	run_digit_tests(t_test **results);
-
-#endif
+	test = ft_testnew("-0123 +0123!\n", 13);
+	reset_output();
+	test->res = ft_printf("%   0+++d % ++++0d!\n", -123, 123);
+	fflush(stdout);
+	test->output = file_to_string();
+	test->pass = cmpres(test);
+	ft_testadd_back(results, test);
+}
