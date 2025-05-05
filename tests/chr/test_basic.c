@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   test_basic.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:10:07 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 12:05:55 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/05 12:06:54 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/05 12:18:32 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "chr_tests.h"
 
-# include "utils.h"
+void	test_basic(t_test **results)
+{
+	t_test	*test;
 
-void	run_basic_tests(t_test **results);
-void	run_frm_tests(t_test **results);
-void	run_prc_tests(t_test **results);
-void	run_inv_frm_tests(t_test **results);
-void	run_chr_tests(t_test **results);
-
-#endif
+	test = ft_testnew("h e l!\n", 7);
+	reset_output();
+	test->res = ft_printf("%c %c %c!\n", 'h', 'e', 'l');
+	fflush(stdout);
+	test->output = file_to_string();
+	test->pass = cmpres(test);
+	ft_testadd_back(results, test);
+}

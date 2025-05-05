@@ -6,22 +6,31 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 00:01:31 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/04 15:00:53 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:32:11 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
+static int	is_zone(const char *zone, const char *test_zone_name)
+{
+	if (!strcmp(zone, test_zone_name) || !strcmp(zone, "all"))
+		return (1);
+	return (0);
+}
+
 void	start_tests(t_test **results, char *zone)
 {
-	if (!strcmp(zone, "basic"))
+	if (is_zone(zone, "basic"))
 		run_basic_tests(results);
-	if (!strcmp(zone, "strfrm"))
+	if (is_zone(zone, "strfrm"))
 		run_frm_tests(results);
-	if (!strcmp(zone, "strprc"))
+	if (is_zone(zone, "strprc"))
 		run_prc_tests(results);
-	if (!strcmp(zone, "strinvfrm"))
+	if (is_zone(zone, "strinvfrm"))
 		run_inv_frm_tests(results);
+	if (is_zone(zone, "chr"))
+		run_chr_tests(results);
 }
 
 int	main(int argc, char **argv)

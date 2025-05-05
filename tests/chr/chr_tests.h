@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   chr_tests.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:10:07 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 12:05:55 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/05 12:04:09 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/05 12:41:35 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#ifndef CHR_TESTS_H
+# define CHR_TESTS_H
 
 # include "utils.h"
 
-void	run_basic_tests(t_test **results);
-void	run_frm_tests(t_test **results);
-void	run_prc_tests(t_test **results);
-void	run_inv_frm_tests(t_test **results);
-void	run_chr_tests(t_test **results);
+void	test_basic(t_test **results);
+void	test_basic_aligned(t_test **results);
+void	test_width(t_test **results);
+void	test_ignore_flags(t_test **results);
+void	test_null_eof(t_test **results);
 
 #endif

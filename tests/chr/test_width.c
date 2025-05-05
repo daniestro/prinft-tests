@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   test_width.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:10:07 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 12:05:55 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/05 12:21:40 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/05 12:26:32 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "chr_tests.h"
 
-# include "utils.h"
+void	test_width(t_test **results)
+{
+	t_test	*test;
 
-void	run_basic_tests(t_test **results);
-void	run_frm_tests(t_test **results);
-void	run_prc_tests(t_test **results);
-void	run_inv_frm_tests(t_test **results);
-void	run_chr_tests(t_test **results);
-
-#endif
+	test = ft_testnew("    h          e l  !\n", 22);
+	reset_output();
+	test->res = ft_printf("%5c %10.c %-3c!\n", 'h', 'e', 'l');
+	fflush(stdout);
+	test->output = file_to_string();
+	test->pass = cmpres(test);
+	ft_testadd_back(results, test);
+}
