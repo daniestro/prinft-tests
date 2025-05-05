@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   test_width_ptr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:10:07 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 15:00:30 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/05 15:26:59 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/05 15:30:10 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "ptr_tests.h"
 
-# include "utils.h"
+void	test_width_ptr(t_test **results)
+{
+	t_test	*test;
 
-void	run_basic_tests(t_test **results);
-void	run_frm_tests(t_test **results);
-void	run_prc_tests(t_test **results);
-void	run_inv_frm_tests(t_test **results);
-void	run_chr_tests(t_test **results);
-void	run_ptr_tests(t_test **results);
-
-#endif
+	test = ft_testnew("ptr <  0x4020c0>\n", 17);
+	reset_output();
+	test->res = ft_printf("ptr <%10p>\n", 4202688);
+	fflush(stdout);
+	test->output = file_to_string();
+	test->pass = cmpres(test);
+	ft_testadd_back(results, test);
+}

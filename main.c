@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 00:01:31 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 12:32:11 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:12:05 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	start_tests(t_test **results, char *zone)
 		run_inv_frm_tests(results);
 	if (is_zone(zone, "chr"))
 		run_chr_tests(results);
+	if (is_zone(zone, "ptr"))
+		run_ptr_tests(results);
 }
 
 int	main(int argc, char **argv)

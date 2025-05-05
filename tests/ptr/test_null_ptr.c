@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   test_null_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:10:07 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 15:00:30 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/05 16:52:27 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/05 16:54:33 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "ptr_tests.h"
 
-# include "utils.h"
+void	test_null_ptr(t_test **results)
+{
+	t_test	*test;
 
-void	run_basic_tests(t_test **results);
-void	run_frm_tests(t_test **results);
-void	run_prc_tests(t_test **results);
-void	run_inv_frm_tests(t_test **results);
-void	run_chr_tests(t_test **results);
-void	run_ptr_tests(t_test **results);
-
-#endif
+	test = ft_testnew("ptr <(nil)>\n", 12);
+	reset_output();
+	test->res = ft_printf("ptr <%p>\n", NULL);
+	fflush(stdout);
+	test->output = file_to_string();
+	test->pass = cmpres(test);
+	ft_testadd_back(results, test);
+}

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   ptr_tests.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:10:07 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 15:00:30 by dkalgano         ###   ########.fr       */
+/*   Created: 2025/05/05 14:59:08 by dkalgano          #+#    #+#             */
+/*   Updated: 2025/05/05 17:03:02 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#ifndef PTR_TESTS_H
+# define PTR_TESTS_H
 
 # include "utils.h"
 
-void	run_basic_tests(t_test **results);
-void	run_frm_tests(t_test **results);
-void	run_prc_tests(t_test **results);
-void	run_inv_frm_tests(t_test **results);
-void	run_chr_tests(t_test **results);
-void	run_ptr_tests(t_test **results);
+void	test_basic_ptr(t_test **results);
+void	test_width_ptr(t_test **results);
+void	test_precision_ptr(t_test **results);
+void	test_overflow_ptr(t_test **results);
+void	test_width_precision_ptr(t_test **results);
+void	test_null_ptr(t_test **results);
+void	test_null_width_ptr(t_test **results);
 
 #endif
