@@ -6,7 +6,7 @@
 /*   By: dkalgano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:29:52 by dkalgano          #+#    #+#             */
-/*   Updated: 2025/05/05 19:49:26 by dkalgano         ###   ########.fr       */
+/*   Updated: 2025/05/06 16:35:34 by dkalgano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,7 @@ void	run_digit_tests(t_test **results)
 	test_width_digit(results);
 	test_precision_digit(results);
 	test_combined_digit(results);
+	test_zeros_precision_digit(results);
+	test_more_flags_digit(results);
+	test_more_flags_integer(results);
 }
